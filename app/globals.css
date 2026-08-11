@@ -1,26 +1,120 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #fcf9f6;
+  --foreground: #1c1c1a;
+
+  --surface: #fcf9f6;
+  --surface-container: #f0edea;
+  --surface-container-high: #eae8e5;
+  --surface-container-highest: #e5e2df;
+
+  --on-surface: #1c1c1a;
+  --on-surface-variant: #45464d;
+
+  --primary: #000000;
+  --on-primary: #ffffff;
+
+  --secondary: #1b6b51;
+  --secondary-fixed: #a6f2d1;
+
+  --outline: #76777d;
+  --outline-variant: #c6c6cd;
+
+  --primary-fixed: #dae2fd;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  margin: 0;
+  padding: 0;
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-hanken), sans-serif;
+  overscroll-behavior: none;
+}
+
+.font-display {
+  font-family: var(--font-playfair), serif;
+}
+
+.font-label {
+  font-family: var(--font-geist), sans-serif;
+}
+
+.font-code {
+  font-family: var(--font-geist), monospace;
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes reveal {
+  0% {
+    clip-path: inset(0 100% 0 0);
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 1;
+  }
+
+  100% {
+    clip-path: inset(0 0 0 0);
+    opacity: 1;
+  }
+}
+
+.animate-slide-up {
+  animation: slide-up 0.8s ease-out forwards;
+}
+
+.animate-slide-up-delay-1 {
+  animation: slide-up 1s ease-out 0.2s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay-2 {
+  animation: slide-up 1s ease-out 0.4s forwards;
+  opacity: 0;
+}
+
+.animate-slide-up-delay-3 {
+  animation: slide-up 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out 0.9s forwards;
+  opacity: 0;
+}
+
+.animate-reveal {
+  animation: reveal 1.2s cubic-bezier(0.77, 0, 0.175, 1) 0.4s forwards;
 }
