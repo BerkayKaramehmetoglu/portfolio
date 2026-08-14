@@ -73,7 +73,7 @@ export default function Hero() {
           {/* Buttons */}
           <div className="animate-slide-up-delay-3 flex flex-wrap items-center gap-4 pt-2">
             <a
-              href="#projeler"
+              href="projects"
               className="group inline-flex items-center justify-center rounded bg-black px-8 py-4 font-label text-xs uppercase tracking-[0.15em] text-white transition-all duration-300 hover:bg-[#31302f]"
             >
               <span>Projelerimi Gör</span>
